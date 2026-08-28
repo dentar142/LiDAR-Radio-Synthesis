@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <style>text{font-family:Arial,"Microsoft YaHei",sans-serif;fill:#1f2937} .title{font-size:24px;font-weight:700}.h{font-size:19px;font-weight:700}.s{font-size:16px}.bad{stroke:#d55e00;stroke-width:3}.good{stroke:#0072b2;stroke-width:3}</style>
+  <rect width="1200" height="520" fill="#fff"/>
+  <text x="40" y="42" class="title">图 1  三角面碎化：直接简化 vs. 共面规整</text>
+  <line x1="600" y1="65" x2="600" y2="480" stroke="#d1d5db" stroke-width="2"/>
+  <text x="70" y="90" class="h">传统：直接 decimation / QEM</text>
+  <text x="670" y="90" class="h">本方法：连通域 + 平面约束</text>
+  <polygon points="100,380 100,170 420,145 500,205 500,380" fill="#d9eaf7" class="bad"/>
+  <g stroke="#d55e00" fill="none" stroke-width="1.4">
+    <path d="M100 170L180 230L100 290L260 300L180 230L340 180L420 145L340 250L500 205L420 300L500 380L340 330L260 420L180 350L100 380"/>
+    <path d="M180 230L340 250M260 300L340 180M340 330L420 300M180 350L260 420"/>
+  </g>
+  <text x="110" y="430" class="s">面数下降，但边界锯齿、法线跳变</text>
+  <text x="110" y="455" class="s">同一平面可能被保留为多个小区域</text>
+  <polygon points="690,380 690,170 1010,170 1090,220 1090,380" fill="#dff2e1" class="good"/>
+  <g stroke="#0072b2" fill="none" stroke-width="1.2" opacity=".65">
+    <path d="M690 250L770 250L850 250L930 250L1010 250L1090 250M770 170L770 380M850 170L850 380M930 170L930 380M1010 170L1010 380"/>
+  </g>
+  <path d="M690 170L1010 170L1090 220L1090 380L690 380Z" fill="none" class="good"/>
+  <text x="700" y="430" class="s">先聚合同一平面，再拟合边界</text>
+  <text x="700" y="455" class="s">面数可降，平面和建筑边缘保持稳定</text>
+  <text x="470" y="500" class="s">可检验指标：平面残差、法线方差、边界偏移、退化面数</text>
+</svg>

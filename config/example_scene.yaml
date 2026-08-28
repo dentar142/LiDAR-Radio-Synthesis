@@ -1,0 +1,24 @@
+scene:
+  id: hkustgz_single_scene_example
+  description: one bounded campus scene
+sources:
+  geometry: data/scene.obj
+  photos: data/photos/
+  annotations: data/annotations.json
+coordinate_reference:
+  crs: local_enu
+  axis_order: ENU
+  unit: m
+  origin_latitude_deg: 22.891870127
+  origin_longitude_deg: 113.478080720
+  origin_altitude_m: 106.799
+  origin_status: candidate_not_survey_verified
+  vertical_datum: local_ellipsoidal
+stages:
+  - geometry
+  - building
+  - semantic
+  - materials
+  - ground
+  - georef
+  - export

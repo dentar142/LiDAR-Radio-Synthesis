@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <style>text{font-family:Arial,"Microsoft YaHei",sans-serif;fill:#1f2937}.title{font-size:24px;font-weight:700}.h{font-size:19px;font-weight:700}.s{font-size:16px}</style>
+  <rect width="1200" height="520" fill="#fff"/><text x="40" y="42" class="title">图 2  多源空间错位：未配准 vs. 坐标合同</text>
+  <line x1="600" y1="65" x2="600" y2="480" stroke="#d1d5db" stroke-width="2"/>
+  <text x="80" y="90" class="h">未配准叠加</text><text x="700" y="90" class="h">统一 ENU 后分层叠加</text>
+  <rect x="90" y="160" width="400" height="260" fill="#eef2f7" stroke="#9ca3af"/>
+  <rect x="140" y="210" width="160" height="110" fill="#c7d2fe" stroke="#7c3aed" stroke-width="3"/>
+  <rect x="210" y="240" width="160" height="110" fill="none" stroke="#d55e00" stroke-width="4" stroke-dasharray="8 6"/>
+  <path d="M110 370 C180 330 230 400 300 355 S420 350 470 390" fill="none" stroke="#111827" stroke-width="9"/>
+  <text x="110" y="450" class="s">建筑轮廓偏移；道路可能穿过建筑</text>
+  <text x="110" y="475" class="s">原因：轴向、镜像或像素原点不一致</text>
+  <rect x="690" y="160" width="400" height="260" fill="#eef2f7" stroke="#9ca3af"/>
+  <rect x="760" y="205" width="190" height="120" fill="#c7d2fe" stroke="#0072b2" stroke-width="3"/>
+  <path d="M720 370 C790 330 840 400 910 355 S1030 350 1070 390" fill="none" stroke="#111827" stroke-width="9"/>
+  <path d="M745 345L965 345" stroke="#2ca25f" stroke-width="18" opacity=".7"/>
+  <text x="710" y="450" class="s">建筑排除掩膜优先，地面层不穿楼</text>
+  <text x="710" y="475" class="s">变换写入 georeference_contract.json</text>
+</svg>
