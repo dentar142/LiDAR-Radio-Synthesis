@@ -1,4 +1,23 @@
-"""Semantic fusion contracts."""
+"""Adaptive semantic segmentation contracts."""
 
-from .fusion import SemanticLabel, SemanticSource, fuse_semantics
-__all__ = ["SemanticLabel", "SemanticSource", "fuse_semantics"]
+from .fusion import (
+    ReconstructionPolicy,
+    SegmentationLevel,
+    SemanticConflict,
+    SemanticEvidence,
+    SemanticFusionResult,
+    SemanticRegion,
+    SemanticSource,
+    fuse_semantics,
+)
+
+__all__ = [
+    "ReconstructionPolicy",
+    "SegmentationLevel",
+    "SemanticConflict",
+    "SemanticEvidence",
+    "SemanticFusionResult",
+    "SemanticRegion",
+    "SemanticSource",
+    "fuse_semantics",
+]
