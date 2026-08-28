@@ -28,7 +28,6 @@ archives/
 # Curated review figures are versioned examples.
 !figures/
 !figures/README.md
-!figures/*.svg
 !figures/real/
 !figures/real/*.png
 !figures/real/*.jpg

@@ -20,6 +20,6 @@ python tools/run_stage.py --config config/example_scene.yaml --stage all
 
 后续实现应在每个阶段增加数据校验、可重复日志和失败门禁，并保留原始输入与版本信息。
 
-## 方法问题示例图
+## 真实问题样例
 
-见 [`docs/figure-guide.md`](docs/figure-guide.md)。其中的 SVG 图解释了三角面碎化、直接简化、空间错位和材质跳变等问题。图示为脱敏概念示例，不代表真实校园数据的定量结果。
+见 [`docs/figure-guide.md`](docs/figure-guide.md)。文档只引用已有项目截图，重点解释 LiDAR 降面后的几何失真，以及语义分割如何按楼体、墙面、屋顶和玻璃等建筑特性组织重构。
