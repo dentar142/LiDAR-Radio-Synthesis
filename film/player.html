@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>从碎片到可仿真地图</title>
+  <style>
+    :root{color-scheme:dark;--bg:#050912;--panel:#0b1422;--line:#20324a;--text:#edf6ff;--muted:#91a5bc;--cyan:#27d8f6;--orange:#ff7a24;--green:#3ce48a}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% 0,#102843 0,transparent 38%),var(--bg);font-family:Inter,"Noto Sans CJK SC",system-ui,sans-serif;color:var(--text)}
+    main{width:min(1240px,94vw);margin:0 auto;padding:48px 0 64px}.eyebrow{color:var(--cyan);font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+    h1{font-size:clamp(34px,5vw,68px);line-height:1.03;margin:12px 0 18px;letter-spacing:-.04em}p{color:var(--muted);line-height:1.75;max-width:840px}
+    .player{margin-top:30px;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#000;box-shadow:0 30px 100px #0009}video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+    .chapters{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 28px}.chapters button{border:1px solid var(--line);background:linear-gradient(180deg,#111d2d,#0a111d);color:var(--text);padding:14px;border-radius:14px;text-align:left;cursor:pointer}.chapters button:hover{border-color:var(--cyan);transform:translateY(-1px)}
+    .chapters small{display:block;color:var(--cyan);margin-bottom:5px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric{padding:20px;border:1px solid var(--line);background:#09111e;border-radius:18px}.metric strong{display:block;font-size:28px}.metric span{color:var(--muted);font-size:13px}
+    .boundary{margin-top:22px;border-left:3px solid var(--orange);padding:8px 0 8px 18px}.actions{display:flex;gap:12px;margin-top:24px}.actions a{color:#04101a;background:var(--cyan);padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700}.actions a.secondary{color:var(--text);background:transparent;border:1px solid var(--line)}
+    @media(max-width:800px){.chapters,.grid{grid-template-columns:repeat(2,1fr)}main{padding-top:28px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">How to Make a Clean Map for Simulation</div>
+  <h1>从碎片到可仿真地图</h1>
+  <p>工程图约束建筑平面结构，LiDAR 提供高度证据，原模型语义回投影到新的连通表面。155 秒中文科研演示，包含真实项目资产、机器门禁与证据边界。</p>
+  <div class="player"><video id="film" controls preload="metadata" poster="final_contact_sheet.jpg"><source src="HKUSTGZ_clean_map_research_film_1080p_zh_stereo.mp4" type="video/mp4"></video></div>
+  <div class="chapters">
+    <button data-time="8"><small>00:08</small>原始 LiDAR 问题</button><button data-time="27"><small>00:27</small>工程图规则约束</button>
+    <button data-time="47"><small>00:47</small>跨模态自动配准</button><button data-time="67"><small>01:07</small>几何模型生长</button>
+    <button data-time="97"><small>01:37</small>材质语义回投影</button><button data-time="122"><small>02:02</small>运行与科学门禁</button>
+    <button data-time="140"><small>02:20</small>最终模型与指标</button><button data-time="0"><small>00:00</small>返回开场</button>
+  </div>
+  <div class="grid"><div class="metric"><strong>35</strong><span>建筑轮廓</span></div><div class="metric"><strong>160</strong><span>封闭部件</span></div><div class="metric"><strong>3,031</strong><span>连通表面</span></div><div class="metric"><strong style="color:var(--green)">PASS</strong><span>五项运行门禁</span></div></div>
+  <p class="boundary">材质颜色是视觉与几何候选，不是施工记录，也不是实测介电常数或电导率。因此运行状态为 PASS，科学状态仍为 REVIEW_REQUIRED。</p>
+  <div class="actions"><a href="HKUSTGZ_clean_map_research_film_1080p_zh_stereo.mp4" download>下载 1080p 成片</a><a class="secondary" href="SHA256SUMS" target="_blank">查看文件哈希</a></div>
+</main>
+<script>
+  const film=document.querySelector('#film');document.querySelectorAll('[data-time]').forEach(button=>button.addEventListener('click',()=>{film.currentTime=Number(button.dataset.time);film.play()}));
+</script>
+</body>
+</html>

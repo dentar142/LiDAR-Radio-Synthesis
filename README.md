@@ -51,6 +51,10 @@ python tools/run_stage.py \
 - [`docs/automatic-plan-lidar-material-pipeline_zh.md`](docs/automatic-plan-lidar-material-pipeline_zh.md)：当前全自动几何与材质回投影流水。
 - [`docs/complete-work-report_zh.md`](docs/complete-work-report_zh.md)：从早期 LiDAR 规整、视觉语义实验到 Sionna 部署的完整工作报告。
 
+## 科研演示动画
+
+[`film/`](film/) 提供 155 秒发布会风格科研动画的可复现工程，包含中文分镜、旁白、Blender 点云/模型动画、程序化音乐、字幕和服务器合成脚本。视频使用真实项目资产，但原始模型和渲染帧不进入 Git 仓库。
+
 ## 真实问题样例
 
 见 [`docs/figure-guide.md`](docs/figure-guide.md)。文档只引用已有项目截图，重点解释 LiDAR 降面后的几何失真，以及语义分割如何按楼体、墙面、屋顶和玻璃等建筑特性组织重构。
