@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hkustgz-material-mapping"
-version = "0.1.0"
-description = "Method scaffold for constrained building geometry and material mapping"
-requires-python = ">=3.11"
+version = "0.2.0"
+description = "Automatic plan-constrained LiDAR reconstruction and surface-material mapping"
+requires-python = ">=3.10"
 license = {file = "LICENSE"}
 dependencies = []
 
 [project.optional-dependencies]
-runtime = ["numpy", "pyyaml", "trimesh", "open3d", "shapely", "pyproj"]
+runtime = ["numpy", "pyyaml", "opencv-python-headless", "pillow", "scipy", "shapely"]
 test = ["pytest", "mypy"]
 
 [tool.pytest.ini_options]

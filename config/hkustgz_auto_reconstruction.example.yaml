@@ -1,0 +1,79 @@
+mode: plan_lidar_reconstruction
+
+scene:
+  id: hkustgz_phase1_auto_plan_lidar_v1
+  description: fully automatic plan-constrained LiDAR geometry and surface-material prior
+
+sources:
+  lidar_obj: /absolute/path/to/original_textured_lidar_mesh.obj
+  plan_image: /absolute/path/to/master_plan.jpg
+  semantic_voxels:
+    - /absolute/path/to/BlockB_obj_voxels_v3.bin
+    - /absolute/path/to/BlockY_obj_voxels_v3.bin
+
+plan:
+  crop_px: [4700, 1600, 14500, 9000]
+  metres_per_pixel: 0.2285
+  rgb_lower: [160, 120, 70]
+  rgb_upper: [245, 220, 190]
+  channel_difference_min:
+    r_minus_g: 10
+    g_minus_b: 10
+  minimum_component_pixels: 1000
+  minimum_area_m2: 40
+  minimum_hole_area_m2: 100
+  simplify_m: 1.5
+
+raster:
+  resolution_m: 1.0
+  z_bin_size_m: 1.0
+
+registration:
+  boundary_spacing_m: 4.0
+  rotation_range_deg: 8.0
+  scale_fraction: 0.10
+  translation_range_px: 80
+  height_threshold_uint8: 60
+  minimum_silhouette_iou: 0.45
+
+height_fit:
+  minimum_height_m: 3.0
+  maximum_height_m: 80.0
+  minimum_roof_coverage: 0.30
+  minimum_ground_cells: 50
+  ground_ring_m: 15.0
+  interior_erode_m: 3.0
+  peak_minimum_fraction: 0.025
+  peak_separation_m: 3.0
+  maximum_levels: 5
+  multilevel_spread_m: 8.0
+  minimum_part_area_m2: 35.0
+  part_simplify_m: 1.0
+  fallback_height_m: 16.0
+
+material_transfer:
+  cell_m: 1.0
+  neighbor_cells: 2
+  maximum_samples_per_surface: 400
+  minimum_hit_rate: 0.35
+  minimum_top_vote_share: 0.60
+  minimum_confidence: 0.45
+  fallback_labels:
+    roof: roof_surface
+    facade: other_building_surface
+    base: structural_base
+
+gates:
+  expected_building_count: 35
+  minimum_direct_height_ratio: 0.75
+  minimum_mean_material_hit_rate: 0.20
+  stop_on_registration_failure: true
+
+coordinate_reference:
+  crs: local_enu
+  axis_order: ENU
+  unit: m
+  origin_status: inherited_from_source_not_independently_surveyed
+
+output:
+  root: runs

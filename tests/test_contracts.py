@@ -1,8 +1,8 @@
-"""Import and contract smoke tests for the method scaffold."""
+"""Import and contract smoke tests for the automatic research baseline."""
 import importlib
 
 def test_stage_modules_import():
-    for name in ("geometry", "building", "semantic", "materials", "ground", "georef", "export"):
+    for name in ("geometry", "building", "semantic", "materials", "ground", "georef", "export", "reconstruction"):
         importlib.import_module(f"src.{name}")
 
 def test_key_contracts_exist():
