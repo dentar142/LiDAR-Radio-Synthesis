@@ -23,10 +23,10 @@ The release builder uses an allowlist and rejects path traversal, symlinks, bina
 
 The checked-in examples describe interfaces and expected inputs. The full scene run requires external measurement records and model assets, so public CI verifies deterministic unit contracts and packaging rather than executing `config/example_scene.yaml`.
 
-## Before publication
+## Publication checks
 
 - Confirm all empirical figures and reported metrics come from frozen experiment outputs.
 - Record the commit identifier, environment lock information and input-data provenance.
 - Keep transmitter configuration, measurement records and large geometry outside the archive.
-- Add the public dataset URL only after its ownership, license and content have been verified.
+- Verify the public dataset URL, ownership, current license terms and content before each release.
 - Do not publish from an unreviewed working tree.

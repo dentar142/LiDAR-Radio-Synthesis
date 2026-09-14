@@ -2,7 +2,7 @@
 
 ## Scope
 
-Preserve the existing plan/LiDAR/material reconstruction implementation and integrate the downstream radio workflow used by the aligned report. No private measurements, meshes, scene credentials, or remote deployment are included. Remote publication is separate from local packaging.
+Preserve the existing plan/LiDAR/material reconstruction implementation and integrate the downstream radio workflow used by the aligned report. No private measurements, meshes, scene credentials, or remote deployment are included. The source repository is public; release archives remain a separate, local packaging product.
 
 ## Acceptance criteria
 
@@ -12,7 +12,7 @@ Preserve the existing plan/LiDAR/material reconstruction implementation and inte
 4. CPU smoke tests cover fit-label isolation, spatial splits, all ten experts, selection, scoring and repeatability where supported.
 5. RT uses the existing Sionna implementation, with private input assets external and a separate GPU dependency profile. Synthetic fixtures are labelled, never reported as empirical accuracy.
 6. Documentation covers scene preparation, measurement adaptation, RT features, calibration, fitting, selection, evaluation, resume and outputs.
-7. Packaging includes source/config/docs/tests only and scans for absolute local paths, credentials and private data. No push is performed.
+7. Packaging includes source/config/docs/tests only and scans for absolute local paths, credentials and private data. The packaging command itself performs no network publication.
 
 ## Sequence
 

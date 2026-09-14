@@ -4,7 +4,7 @@
 
 Geometry reconstruction remains in its original module. The H18 runtime dependency closure and aligned material/power-calibration controller are integrated under src/radio/legacy. Public adapters, strict point/RT alignment checks, an independent scorer, a synthetic executable example, optional dependency groups, CI and a source-only release builder are included.
 
-The source package is intended for local review and subsequent repository publication. No remote push is part of this delivery.
+The reviewed source was published to the repository's `main` branch on 2026-09-14. Local release archives are reproducible packaging artifacts and are not committed.
 
 ## Executed checks
 
