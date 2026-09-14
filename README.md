@@ -1,5 +1,50 @@
 # How to Make a Clean Map for Simulation
 
+## π-Razer：建模与无线预测代码交付
+
+仓库现在同时包含前半段几何/材质重建和后半段无线预测代码。后半段接入实际 H18 十专家、空间匹配验证、校正功率和双材质对照实验控制器，数值核心保留在 `src/radio/legacy/`，移植来源及原始摘要见 `docs/radio-source-provenance.json`。
+
+流程为：工程图与 LiDAR → 几何及表面材质 → RT 场景与路径增益 → 训练点功率校正 → 十专家拟合 → 查询空间匹配验证 → 专家选择/风险加权 → 独立测试评估。
+
+### 快速运行
+
+```text
+python -m pip install -e ".[runtime,radio,test]"
+python -m pytest -q
+python tools/run_radio.py demo --output runs/radio-smoke
+```
+
+演示使用固定种子的合成数据，实际调用十专家与三折选择代码，不需要校园资产或 GPU。输出包括逐点预测、验证预测、权重、选择审计和软件测试指标。演示的快速 GP 拟合与合成指标不用于报告实验结论。
+
+真实数据入口：
+
+```text
+python tools/run_radio.py inspect --input data/my-band
+python tools/run_radio.py predict --input data/my-band --output runs/my-band
+python tools/run_radio.py score --predictions runs/my-band/predictions.csv --truth data/private-truth.csv --output runs/my-band/metrics.csv
+```
+
+每个输入目录只放一个频段，查询标签不进入预测文件。格式、坐标合同、RT 前置条件和完整实验命令见 [无线流程与复现](docs/radio-workflow.md)。
+
+### 目录与交付边界
+
+| 目录/入口 | 内容 |
+| --- | --- |
+| `src/reconstruction/` | 工程图/LiDAR 配准、实体重建、材质映射 |
+| `src/radio/` | 数据检查、预测入口、合成测试数据 |
+| `src/radio/legacy/` | 实验数值核心、RT、冻结划分、双材质比较 |
+| `tools/run_stage.py` | 原有建模入口 |
+| `tools/run_radio.py` | inspect / predict / score / demo |
+| `tools/build_release.py` | 源码包及逐文件 SHA-256 清单 |
+
+原始测量数据、模型、RT 缓存与接收机真值由使用者提供，不随源码发布。通用入口覆盖单个查询批次的 MATCHED 选择及风险加权，冻结实验入口覆盖 FIXED/MATCHED、双外层划分与材质消融。两种入口不混用实验清单。
+
+原始三维环境模型来源为 [HKUST_GZ_3Dcampus](https://github.com/LITIANSHUN/HKUST_GZ_3Dcampus)，该仓库描述的是无人机倾斜摄影测量重建。无线测量数据已公开发布于 [Hugging Face](https://huggingface.co/datasets/Neko142/pi-razer-ground-measurements)。来源与推荐引用见 [数据来源说明](docs/data-sources.md)。
+
+打包命令：`python tools/build_release.py --output-dir release`。本地打包不会提交或推送 GitHub。
+
+以下保留原有建模说明，其中模型统计对应各自的建模版本，不应与后续报告版本合并统计。
+
 本仓库提供一条可执行的全自动基线：从建筑工程图/总平图提取规则轮廓，以原始 LiDAR/摄影测量 OBJ 的高度证据完成跨模态配准、局部地面估计和多屋面层次拆分，生成封闭几何白模；随后把原始纹理网格的面级视觉语义通过三维体素回投影到新模型，并在连通表面尺度聚合材质候选。
 
 ## 范围

@@ -7,6 +7,9 @@ venv/
 dist/
 build/
 *.egg-info/
+release/
+*.zip
+*.sha256
 
 # Local and server data are never part of the public repository.
 data/
@@ -24,6 +27,19 @@ archives/
 *.png
 *.tif
 *.tiff
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.npy
+*.npz
+*.csv
+*.parquet
+*.feather
+.env
+.env.*
+*.pem
+*.key
 
 # Curated review figures are versioned examples.
 !figures/

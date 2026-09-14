@@ -276,7 +276,7 @@ python tools/run_stage.py --config config/hkustgz_auto_reconstruction.example.ya
 三维粗模试作/完整校园-v2-geometry/v7-r4-solid-floor-70pct-core/
 ```
 
-服务器 Sionna 主实验目录为 `/home/zichang/nekospace/experiments/sim2real-wedt-uncalibrated-v1`，V7-r4 作为独立资产放在 `assets/hkustgz-v7-r4-70pct-core-sionna-rt-v1/sionna-rt-v1/`，没有覆盖旧 `assets/scene_facets`。远程站点的完整路径、哈希和端口应以部署快照为准，报告不记录密码、令牌、data seed 或 Oracle 私有资产。
+服务器 Sionna 主实验目录由部署配置指定，V7-r4 作为独立资产放在 `assets/hkustgz-v7-r4-70pct-core-sionna-rt-v1/sionna-rt-v1/`，没有覆盖旧 `assets/scene_facets`。远程站点的完整路径、哈希和端口应以部署快照为准，报告不记录密码、令牌、data seed 或 Oracle 私有资产。
 
 建议复现顺序为：
 

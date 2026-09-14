@@ -4,18 +4,27 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hkustgz-material-mapping"
-version = "0.2.0"
-description = "Automatic plan-constrained LiDAR reconstruction and surface-material mapping"
+version = "0.3.0"
+description = "Plan-constrained LiDAR reconstruction and query-matched radio-twin prediction"
 requires-python = ">=3.10"
-license = {file = "LICENSE"}
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
 dependencies = []
 
 [project.optional-dependencies]
 runtime = ["numpy", "pyyaml", "opencv-python-headless", "pillow", "scipy", "shapely"]
-test = ["pytest", "mypy"]
+radio-core = ["numpy", "scipy", "pandas", "scikit-learn", "matplotlib"]
+radio-neural = ["torch"]
+radio = ["numpy", "scipy", "pandas", "scikit-learn", "matplotlib", "torch"]
+rt = ["sionna-rt==2.0.1", "mitsuba==3.8.0"]
+test = ["pytest", "mypy", "build"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
 [tool.setuptools]
 package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src", "src.*"]

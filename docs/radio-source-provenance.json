@@ -1,0 +1,44 @@
+{
+  "schema": "radio-source-provenance-v1",
+  "migration": "mechanical package port; scientific algorithms and numerical constants unchanged",
+  "source_root": "v54_auto/semantic_impact_preinverse_v1/src",
+  "aligned_source": "Report_EN_20260913_AlignedRevision/aligned_completed/aligned_factorial.py",
+  "credentials_or_data_copied": false,
+  "dependencies": {
+    "core": ["numpy", "pandas", "scipy", "scikit-learn"],
+    "gp_and_legacy_neural": ["torch"],
+    "ray_tracing": ["sionna-rt==2.0.1", "mitsuba==3.8.0", "drjit"]
+  },
+  "module_entrypoints": {
+    "h18_campaign": "python -m src.radio.legacy.run_h18_distance_trend --help",
+    "aligned_factorial": "python -m src.radio.legacy.aligned_factorial --help"
+  },
+  "origin_runtime_files": {
+    "run_h18_distance_trend.py": "516c399c7489cc6d0d65fae51ba7093d2f7c700fa78cbaf7649867fd74072ceb",
+    "h18_validation.py": "15cf441c4f89b862451571e94331593566687a82ad518a37932ef2c81b47a988",
+    "h18_models.py": "eef1ca5f7719f5b82d61a0b22d370b3f056c5a1a2340a9dfae412ff8ade2359f",
+    "h17_local_models.py": "1a208eb7ae1354caa521f16e4781bdae52ba1c274e9eb1117d67cd0c4fae0a1e",
+    "h15_models.py": "cb0a377e80b0f0499d8c04362c441b2495bce292f8b29510b0db05acc3755528",
+    "h14_models.py": "865c2554ab47a2ba5f803b8e063bebecb0f3c0498ee043fc3c573b17c2c0db4e",
+    "run_h15_physical_neural.py": "db10f027153dc50660c2a3ba096f17efdc0acafedec006aa3cf37a3ea166d8e6",
+    "run_h11_sparse_learning_curves.py": "eab72f7d5410602da3275a58e3da341e3c4242b1cc4951d8a0bc709fb87b0395",
+    "run_h13_statistical_revalidation.py": "79ea8525bf30ed8d3c0695e7e770fd4062bdb4508e4e0eb785eb4b1f83ce2707",
+    "run_h8_combined_screen.py": "1fb3114e3def887a2c5c3e3cb9b4f539644ac63cf19c7094edd51df6b619a4d1",
+    "run_h8_geospatial_models.py": "56493e93b0660cef1b9e2de0c8f76b6abd8b799c434ccb1204a71ca62deafc0a",
+    "run_h10_physics_gaussian_hybrid.py": "c9e7290eecece60d7687e8cf3c9b2c754775e837a87d3853a0ea1a24df6240df",
+    "run_h13_semantic_ablation.py": "ef626900587b8b6bf8925a9bd7f7cb91091865ca72b5d331235797e2c6f7e954",
+    "run_h8_dual_source_router.py": "e1ab292c67edf340e6e93ae06c96bfcd3aaea6884d8712a3652b2cc263bfa2ab",
+    "run_h13_queue.py": "a075c1e9dd8124b676949f3aeb0b699a2aad3e177136be88917c8e5258f6649f",
+    "score_h7_pointwise.py": "02974a39b2264ff005b7e7fe1b065969e7fbf080bcf28add89a0441dab3ee6e6",
+    "trace_h7_pointwise_rt.py": "d35ef45858675bd4e83f8ca8c5c13afb74ff25cb67f553dcf8419d7e8c88effe",
+    "trace_h13_corrected_search_cache.py": "ccbde53f63fd01fc5a1b3946431763275d9cc83ecb8fb93b7f3a0296857842f5"
+  },
+  "aligned_factorial_sha256": "e99639fa0dca383c178297a082166900ce9d5e980fe9e3bd1fd8d868d7bfc65c",
+  "allowed_port_changes": [
+    "package-relative imports",
+    "portable process locking",
+    "module-based subprocess invocation",
+    "explicit inputs instead of release-src injection",
+    "automatic CPU/CUDA device selection"
+  ]
+}
