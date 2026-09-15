@@ -13,6 +13,7 @@ python tools/run_radio.py predict --input data/band --output runs/band
 | `tools/run_stage.py` | Scene YAML, textured mesh, blueprints → geometry, semantic/material mapping |
 | `src.radio.legacy.aligned_factorial` | Sionna XML, receivers, alignment → RT features, calibrated experiments |
 | `tools/run_radio.py` | `points.csv`, `rt.npz`, `configs.json` → predictions, routing audit |
+| [Material candidates](docs/material-correction.md) | Scene, priors, fit/query arrays → experimental material-corrected predictions |
 
 [Input schema and RT commands](docs/radio-workflow.md) · [Scene config](config/hkustgz_auto_reconstruction.example.yaml) · [Data](docs/data-sources.md)
 

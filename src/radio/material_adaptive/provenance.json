@@ -1,0 +1,15 @@
+{
+  "source_root": "v54_auto/semantic_impact_preinverse_v1/src",
+  "source_files_sha256": {
+    "material_expert_replacement.py": "545b83541ca8cd0104568563dcdc81f4dc1c8df442359281e2241ae8adbe1fa8",
+    "h16_material.py": "ad24b8d731995ff4135dbcf951c3998befc1fbe137c0eef0cedec1461cf5e4df",
+    "h20_banked_fit.py": "11a8e4fd84fa7f68f95f1076b03bd3f7b168f8a074051910cc4981c3622fb00c",
+    "h20_composition.py": "9e86789bc74931a37d05a3ee7dbcde09e0b9000260b693c1df1dbee628f2d65f",
+    "h20_geometry_bank.py": "df6079ebc285e977c0cc080717feae4d400b476ad580653767c06dc924da1495",
+    "h20_material.py": "d8af11bf8113cbcc9a9fc2cee6cc6e6d88381e3c68a0542d6b57c2285fdc8b26",
+    "h20_common.py": "cf56bf241d99fbb16929b9fd176b188f13227e79ed7b1dac0c8686824f920cea",
+    "semantic_impact.py": "4c57bd679b5becdbb63516199a43d9fe69360f12cd918b52d923cba7290be32f"
+  },
+  "migration": "mechanical source migration; no algorithm changes",
+  "validation_boundary": "CPU interfaces only; no GPU RT accuracy claim"
+}
