@@ -19,6 +19,6 @@ Public visibility was verified on 2026-09-14. A redistribution license is not as
 
 ## Processing code
 
-Pipeline repository: https://github.com/dentar142/How2make-a-clean-map4sim
+Pipeline repository: https://github.com/dentar142/LiDAR-Radio-Synthesis
 
 The three citations serve distinct purposes: environment assets, measured radio data and processing software.

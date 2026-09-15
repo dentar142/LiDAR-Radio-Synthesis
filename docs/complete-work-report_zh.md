@@ -221,7 +221,7 @@ V7-r4 已转换为 Sionna RT v2.0.1 使用的 8 个 binary little-endian PLY，�
 
 ## 🧰 GitHub 开源工程
 
-仓库地址：[How2make-a-clean-map4sim](https://github.com/dentar142/How2make-a-clean-map4sim)。`0e7f4c5 Define adaptive semantic reconstruction hierarchy` 是全自动实现前的最后一个方法骨架版本；后续版本在此基础上实现工程图约束 LiDAR 重构、原模型语义回投影、机器门禁和审计导出。
+仓库地址：[LiDAR-Radio-Synthesis](https://github.com/dentar142/LiDAR-Radio-Synthesis)。`0e7f4c5 Define adaptive semantic reconstruction hierarchy` 是全自动实现前的最后一个方法骨架版本；后续版本在此基础上实现工程图约束 LiDAR 重构、原模型语义回投影、机器门禁和审计导出。
 
 仓库目录为 `config/`、`docs/`、`figures/`、`src/`、`tests/` 和 `tools/`。除通用 geometry、building、semantic、materials、ground、georef、export 阶段外，`src/reconstruction/` 已实现流式 OBJ 正射栅格化、工程图轮廓提取、跨模态配准、LiDAR 高度拟合、多高度部件拆分、约束 Delaunay 封闭实体生成、原网格语义体素回投影和连通表面材质聚合。`tools/run_stage.py` 根据配置模式执行通用审计或完整重构事务。
 
